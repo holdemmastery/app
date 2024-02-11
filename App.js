@@ -3,7 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import AppNavigator from './src/navs/AppNav';
 import { StatusBar } from 'expo-status-bar';
-import { useFonts, FiraSans_400Regular, FiraSans_500Medium } from '@expo-google-fonts/fira-sans';
+import { useFonts, FiraSans_400Regular, FiraSans_500Medium, FiraSans_800ExtraBold } from '@expo-google-fonts/fira-sans';
 import GlobalBackground from './src/comps/GlobalBackground';
 import * as SplashScreen from 'expo-splash-screen';
 
@@ -15,6 +15,7 @@ const App = () => {
   let [fontsLoaded] = useFonts({
     FiraSans_400Regular,
     FiraSans_500Medium,
+    FiraSans_800ExtraBold,
   });
 
   useEffect(() => {

@@ -7,7 +7,7 @@ const Header = ({ title }) => {
       <Text style={styles.headerTitle}>{title}</Text>
       <TouchableOpacity style={styles.profileButton}>
         <Image
-          source={require('../../../assets/profile.png')} // Replace with your profile picture
+          source={require('../../assets/profile.png')} // Replace with your profile picture
           style={styles.profilePic}
         />
       </TouchableOpacity>
@@ -20,22 +20,20 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: 10,
+    marginTop: 45,
+    padding: 20,
   },
   headerTitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
+    fontSize: 44,
+    color: 'white',
+    fontFamily: 'FiraSans_800ExtraBold',
   },
   profileButton: {
-    width: 46,
-    height: 46,
-    resizeMode: 'contain',
   },
   profilePic: {
-    height: 46,
-    resizeMode: 
-    width: 40,
-    height: 40,
+    height: 34,
+    width: 34,
+    resizeMode: 'contain',
   },
 });
 

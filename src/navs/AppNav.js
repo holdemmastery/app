@@ -5,7 +5,8 @@ import HomeScreen from '../screens/HomeScreen';
 import GameScreen from '../screens/GameScreen';
 import StatsScreen from '../screens/StatsScreen';
 import SettingsScreen from '../screens/SettingsScreen';
-import Footer from '../comps/Footer/Footer.js';
+import Header from '../comps/Header';
+import Footer from '../comps/Footer/Footer';
 
 const Stack = createNativeStackNavigator();
 
@@ -25,7 +26,11 @@ const AppNav = () => {
   return (
     <>
       <Stack.Navigator screenOptions={{
-        headerShown: false,
+        header: ({ navigation, route, options }) => {
+          return (
+            <Header title={"Welcome"} />
+          )
+        },
         contentStyle: { backgroundColor: 'transparent' },
       }}>
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
