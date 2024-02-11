@@ -16,8 +16,6 @@ const getTitleFromRoute = (routeName) => {
     StatsScreen: 'Stats',
     SettingsScreen: 'Settings',
   };
-  
-  console.log(routeName);
   return routeTitleMap[routeName.name] || 'App';
 };
 
@@ -44,6 +42,7 @@ const AppNav = () => {
           ) : null;
         },
         contentStyle: { backgroundColor: 'transparent' },
+        animation: 'none',
       }}>
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
         <Stack.Screen name="GameScreen" component={GameScreen} />
