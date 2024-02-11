@@ -1,16 +1,15 @@
 import React from 'react';
-import { Image, StyleSheet } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
+import { Image, StyleSheet, View } from 'react-native';
 
 const HomeScreen = () => {
   return (
-    <LinearGradient colors={['#002440', '#00000D']} style={styles.container}>
+    <View style={styles.container}>
       <Image
         source={require('../../assets/centerpiece.png')}
         style={styles.centerpiece}
         resizeMode="contain"
       />
-    </LinearGradient>
+    </View>
   );
 };
 
@@ -19,6 +18,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
     justifyContent: 'space-between',
+    backgroundColor: 'transparent',
   },
   centerpiece: {
     width: '100%',
