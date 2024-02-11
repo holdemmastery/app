@@ -6,7 +6,7 @@ import { StatusBar } from 'expo-status-bar';
 const App = () => {
   return (
     <NavigationContainer>
-      <StatusBar style="auto" />
+      <StatusBar style="light" />
       <AppNavigator />
     </NavigationContainer>
   );
