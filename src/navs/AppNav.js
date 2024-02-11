@@ -10,6 +10,17 @@ import Footer from '../comps/Footer/Footer';
 
 const Stack = createNativeStackNavigator();
 
+const getTitleFromRoute = (routeName) => {
+  const routeTitleMap = {
+    HomeScreen: 'Home',
+    StatsScreen: 'Stats',
+    SettingsScreen: 'Settings',
+  };
+  
+  console.log(routeName);
+  return routeTitleMap[routeName.name] || 'App';
+};
+
 const AppNav = () => {
   const [isGameScreen, setIsGameScreen] = useState(false);
   const navigationRef = useRef(null);
@@ -27,9 +38,10 @@ const AppNav = () => {
     <>
       <Stack.Navigator screenOptions={{
         header: ({ navigation, route, options }) => {
-          return (
-            <Header title={"Welcome"} />
-          )
+          const title = getTitleFromRoute(route);
+          return route.name !== 'GamePage' ? (
+            <Header title={title} />
+          ) : null;
         },
         contentStyle: { backgroundColor: 'transparent' },
       }}>
