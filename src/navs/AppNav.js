@@ -5,6 +5,7 @@ import HomeScreen from '../screens/HomeScreen';
 import GameScreen from '../screens/GameScreen';
 import StatsScreen from '../screens/StatsScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import ProfileScreen from '../screens/ProfileScreen';
 import Header from '../comps/Header';
 import Footer from '../comps/Footer/Footer';
 
@@ -15,6 +16,8 @@ const getTitleFromRoute = (routeName) => {
     HomeScreen: 'Home',
     StatsScreen: 'Stats',
     SettingsScreen: 'Settings',
+    ProfileScreen: 'Profile',
+    GameScreen: 'Play',
   };
   return routeTitleMap[routeName.name] || 'App';
 };
@@ -37,9 +40,7 @@ const AppNav = () => {
       <Stack.Navigator screenOptions={{
         header: ({ navigation, route, options }) => {
           const title = getTitleFromRoute(route);
-          return route.name !== 'GamePage' ? (
-            <Header title={title} />
-          ) : null;
+          return <Header title={title} />;
         },
         contentStyle: { backgroundColor: 'transparent' },
         animation: 'none',
@@ -48,6 +49,7 @@ const AppNav = () => {
         <Stack.Screen name="GameScreen" component={GameScreen} />
         <Stack.Screen name="StatsScreen" component={StatsScreen} />
         <Stack.Screen name="SettingsScreen" component={SettingsScreen} />
+        <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
       </Stack.Navigator>
       <Footer />
     </>

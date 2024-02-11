@@ -1,11 +1,17 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const Header = ({ title }) => {
+  const navigation = useNavigation();
+  
   return (
     <View style={styles.headerContainer}>
       <Text style={styles.headerTitle}>{title}</Text>
-      <TouchableOpacity style={styles.profileButton}>
+      <TouchableOpacity
+        style={styles.profileButton}
+        onPress={() => navigation.navigate('ProfileScreen')}
+      >
         <Image
           source={require('../../assets/profile.png')} // Replace with your profile picture
           style={styles.profilePic}
@@ -31,8 +37,8 @@ const styles = StyleSheet.create({
   profileButton: {
   },
   profilePic: {
-    height: 34,
-    width: 34,
+    height: 28,
+    width: 28,
     resizeMode: 'contain',
   },
 });

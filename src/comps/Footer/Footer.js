@@ -26,7 +26,7 @@ const Footer = () => {
           source={require('../../../assets/play.png')}
           style={styles.circle}
         />
-        <Text style={styles.itemText}>Train</Text>
+        <Text style={styles.itemText}>Play</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.footerItem}
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     paddingVertical: 10,
     padding: 20,
-    paddingBottom: 60,
+    paddingBottom: 40,
     backgroundColor: 'transparent', // Set your own background color
   },
   footerItem: {
@@ -68,15 +68,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   circle: {
-    width: 52,
-    height: 52,
+    width: 45,
+    height: 45,
     marginBottom: 6,
     resizeMode: 'contain',
   },
   itemText: {
     color: 'white',
     fontFamily: 'FiraSans_500Medium',
-    fontSize: 18,
+    fontSize: 14,
   }
 });
 

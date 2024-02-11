@@ -6,6 +6,7 @@ import { StatusBar } from 'expo-status-bar';
 import { useFonts, FiraSans_400Regular, FiraSans_500Medium, FiraSans_800ExtraBold } from '@expo-google-fonts/fira-sans';
 import GlobalBackground from './src/comps/GlobalBackground';
 import * as SplashScreen from 'expo-splash-screen';
+import { UserProvider } from './src/context/UserContext';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -42,14 +43,14 @@ const App = () => {
   }
   
   return (
-    <View style={{ flex: 1}}>
+    <UserProvider>
       <GlobalBackground>
         <NavigationContainer>
           <StatusBar style="light" />
           <AppNavigator />
         </NavigationContainer>
       </GlobalBackground>
-    </View>
+    </UserProvider>
   );
 };
 
